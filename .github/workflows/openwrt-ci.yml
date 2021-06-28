@@ -46,6 +46,13 @@ jobs:
           sudo -E apt-get clean
 
           df -h
+          
+      - name: 涡轮增雕进程
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
 
       - name: Update feeds
         run: |

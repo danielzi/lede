@@ -53,6 +53,13 @@ jobs:
           mkdir openwrt-packages
           cd openwrt-packages
           git clone https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
+          
+          # DIR505:
+          cat >> .config <<EOF
+          CONFIG_TARGET_ath79=y
+          CONFIG_TARGET_ath79_generic=y
+          CONFIG_TARGET_ath79_generic_DEVICE_dlink_dir-505=y
+          EOF
 
       - name: Update feeds
         run: |

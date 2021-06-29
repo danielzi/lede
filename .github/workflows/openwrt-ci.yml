@@ -47,7 +47,7 @@ jobs:
 
           df -h
           
-      - name: 涡轮增雕进程
+      - name: 添加插件包源
         run: |
           cd package
           mkdir openwrt-packages
@@ -69,6 +69,15 @@ jobs:
 
       - name: Generate configuration file
         run: make defconfig
+        
+      - name: 自定义编译内容
+        run: |
+          # DIR505:
+          cat >> .config <<EOF
+          CONFIG_TARGET_ath79=y
+          CONFIG_TARGET_ath79_generic=y
+          CONFIG_TARGET_ath79_generic_DEVICE_dlink_dir-505=y
+          EOF
 
       - name: Make download
         run: |

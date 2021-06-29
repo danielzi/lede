@@ -69,6 +69,7 @@ jobs:
           CONFIG_TARGET_ath79_generic_DEVICE_dlink_dir-505=y
           CONFIG_PACKAGE_luci-app-advanced=y
           CONFIG_PACKAGE_luci-app-smartdns=y
+          CONFIG_PACKAGE_luci-app-vssr=y
           EOF
           
           make defconfig

@@ -47,12 +47,19 @@ jobs:
 
           df -h
           
-      - name: 添加插件包源
+      - name: 添加siropboy插件包源
         run: |
           cd package
           mkdir openwrt-packages
           cd openwrt-packages
           git clone https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
+          
+          
+       - name: 添加
+         run: |
+          cd package/lean/  
+          git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
+          git clone https://github.com/jerrykuku/luci-app-vssr.git  
     
 
       - name: Update feeds
@@ -67,8 +74,6 @@ jobs:
           CONFIG_TARGET_ath79=y
           CONFIG_TARGET_ath79_generic=y
           CONFIG_TARGET_ath79_generic_DEVICE_dlink_dir-505=y
-          CONFIG_PACKAGE_luci-app-advanced=y
-          CONFIG_PACKAGE_luci-app-smartdns=y
           CONFIG_PACKAGE_luci-app-vssr=y
           EOF
           

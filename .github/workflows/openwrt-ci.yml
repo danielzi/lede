@@ -54,9 +54,8 @@ jobs:
           cd openwrt-packages
           git clone https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
           
-          
-       - name: 添加
-         run: |
+      - name: vssr
+        run: |
           cd package/lean/  
           git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
           git clone https://github.com/jerrykuku/luci-app-vssr.git  
